@@ -1,0 +1,83 @@
+	body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+		margin: 0;
+		padding: 0;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	body {
+		font-size: 12px;
+		font-family: 'Microsoft YaHei';
+	}
+	h3 {
+		display: block;
+		font-size: 1.17em;
+		-webkit-margin-before: 1em;
+		-webkit-margin-after: 1em;
+		-webkit-margin-start: 0px;
+		-webkit-margin-end: 0px;
+		font-weight: bold;
+	}
+	.menu-sidebar{
+		width:180px;
+	}
+	.menu-sidebar h3 {
+		height: 32px;
+		line-height: 32px;
+		font-size: 14px;
+		font-weight: bold;
+		color: #fff;
+		background: #e12605;
+		text-indent: 12px;
+		cursor: pointer;
+		margin:0; <!-- or it will have margin -->
+	}
+	.menu-sidebar ul {
+		border-bottom: 1px solid #d8d8d8;
+	}
+	<!-- ul, menu, dir { -->
+		<!-- display: block; -->
+		<!-- -webkit-margin-before: 1em; -->
+		<!-- -webkit-margin-after: 1em; -->
+		<!-- -webkit-margin-start: 0px; -->
+		<!-- -webkit-margin-end: 0px; -->
+		<!-- -webkit-padding-start: 40px; -->
+	<!-- } -->
+	.menu-sidebar ul.expand li {
+		background-image: url(http://3-ps.googleusercontent.com/h/www.newsqueue.net/Content/images/xarrow_right.png.pagespeed.ic.Ug7kJLxrYQ.webp);
+		background-repeat: no-repeat;
+		background-position: 168px 15px;
+		border-left: 1px solid #d8d8d8;
+		border-bottom: 1px dotted #d8d8d8;
+		margin-bottom: -1px;
+		line-height: 38px;
+		position: relative;
+	}
+	.menu-sidebar ul li a {
+		display: inline-block;
+		color: #4b4b4b;
+		text-indent: 12px;
+		width: 100%;
+	}
+	.menu-sidebar ul li:hover a, 
+	.menu-sidebar ul li.selected a {
+		color: #fff;
+	}
+	.menu-sidebar ul.expand li:hover  ,
+	.menu-sidebar ul.expand li.selected {
+		background-color: #f34626;
+		border-bottom: 1px dotted #f34626;
+		cursor: pointer;
+		z-index: 1;
+	}
+	.menu-sidebar ul.expand li.selected i, 
+	.menu-sidebar ul.expand li:hover i {
+		display: block;
+		z-index: 2;
+		width: 5px;
+		height: 9px;
+		position: absolute;
+		right: -1px;
+		top: 14px;
+		background: url(http://1-ps.googleusercontent.com/h/www.newsqueue.net/Content/images/xarrow_white_left.png.pagespeed.ic.ovkpO1_5SC.webp) no-repeat 0 0;
+	}

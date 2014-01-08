@@ -2,17 +2,21 @@
 
 $result = array();
 $items = array();
-
-for ($i=1; $i <= 15; $i++) { 
+if(!isset($_GET['m'])) {
+	console.log("m not set");
+	return;
+}
+$m=$_GET['m'];
+include "dir.php";
+for ($i=$m; $i < count($files) && $i < $m+10; $i++) { 
     $item = array();
-    $h = rand(200, 400);
-    $item['src'] = "http://lorempixel.com/200/$h/";
-    $item['h'] = $h;
-    
+		$h=$i;
+    // $h = rand(1,20);
+    $item['src'] ="img/".$files[$i]; 
+    $item['href'] ="img/".$files[$i]; 
+    // $item['h'] = 400;
     $items[] = $item;
 }
-
-
 $result['items'] = $items;
 	
 echo json_encode($result);

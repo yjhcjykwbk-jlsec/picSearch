@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>瀑布流</title>
+	<link rel="stylesheet" type="text/css" href="css/container.css" />
+	<link rel="stylesheet" type="text/css" href="css/item.css" />
+</head>
+<body>
+
+<script type="text/javascript" src="src/jquery.min.js"></script>
+<script type="text/javascript" src="src/jquery.waterfall.js"></script>
+
+<div id="container" class="container">
+</div>
+<div id="end" style="display:none; font:60px bold; margin:0 auto; text-align:center;">End</div>
+<script type="text/javascript">
+	// 测试用技术器
+	var n = 0;
+	var m = 0;
+	var wf = new Waterfall({
+			container: $('#container'),
+			colWidth: 230,
+			maxCol: 4,
+			preDistance: 0,
+			load: function(){
+					// 触发滚动加载时的具体操作
+					// 当前作用域下，this指向正创建的对象
+					var self = this;
+					//console.log('..load');
+
+					//m is the start of image num
+					$.get('more.php?m='+m, function(data) {
+						n++;
+						var res = [];
+						m+= data.items.length;
+						if(data.items.length==0){
+						self.end();		 // 终止滚动load
+						$('#end').show();
+						}else
+					$.each(data.items, function(i, item){
+						res.push(
+							'<div class="item masonry_brick masonry-brick" style="position: absolute; top: 0px; left: 0px;">'+
+								'<div class="item_t">'+ 
+								'<div class="img"> '+
+								'<a target="__blank'+i+'" href="'+item.src+'">'+
+								'<img width="'+210+'"  alt="" src="'+item.src+'" data-pinit="registered">'+
+								'</a> '+
+								'<span class="price">￥195.00</span> '+
+								'<div class="btns"> '+
+								'<a href="http://www.jsfoot.com/js/images/more/2012-05-15/608.html" class="img_album_btn">加入专辑</a> '+
+								'</div> '+
+								'</div> '+
+								'<div class="title"><span>this is a description.................</span></div> '+
+								'</div> '+
+								'<div class="item_b clearfix"> '+
+								'<div class="items_likes fl"> <a href="http://www.jsfoot.com" class="like_btn"></a> '+
+								'<em class="bold">916</em> '+
+								'</div> '+
+								'<div class="items_comment fr">'+
+								'<a href="http://www.jsfoot.com">评论</a>'+
+								'<em class="bold">(0)</em>'+
+								'</div> '+
+								'</div> '+
+							'</div>');
+					});
+
+				self.success(res);
+				}, 'json');
+			}
+	});
+</script>
+<style>
+	form{
+		padding: 5px 0 5px 22px;
+	}
+</style>
+<iframe src="uploadpage.html"
+style="position:fixed;top:200px;right:0px;width:160px;box-shadow: 0 1px 4px rgba(0,0,0,.2);
+font-size: 14px;opacity:0.5;background:#ffffff;
+color: #221919;
+line-height: 1;">
+</iframe>
+</body>
+</html>
