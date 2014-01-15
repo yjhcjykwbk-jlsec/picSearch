@@ -1,5 +1,5 @@
 <?php
-$res= scandir("img");
+$res= scandir("../../img");
 $files=array();
 foreach($res as $d){
 	// echo $d;

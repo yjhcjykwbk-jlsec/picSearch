@@ -205,12 +205,12 @@
          * @param {Array} $items 待定位的项的DOM数组.
          */
         layout: function($items) {
-					console.log("layout():");console.log("$items:");
+					// console.log("layout():");console.log("$items:");
             var self = this,
                 op = self.options;
                 l = $items.length;
             for (var i = 0; i < l; i++) {
-								console.log($items[i]);
+								// console.log($items[i]);
                 self._placeItem($items[i]);
             }
 
@@ -235,7 +235,7 @@
          * @param {Object} item 待增加的项，类型可以是 html 代码、dom 元素和 jQ 元素对象.
          */
         addItem: function(item) {
-					console.log("addItem():");console.log("item:"+item);
+					// console.log("addItem():");console.log("item:"+item);
             this.state = 'rendering';
             var $item = $(item);
             var inx = this.getMinHIndex();
@@ -256,9 +256,9 @@
          * @private
          */
         _placeItem: function(item) {
-					console.log("_placeItem():");
-						console.log("item:");console.log(item);
-						console.log("item.outerHeight:"+item.outerHeight(true))
+					// console.log("_placeItem():");
+						// console.log("item:");console.log(item);
+						// console.log("item.outerHeight:"+item.outerHeight(true))
             var self = this,
                 op = this.options,
                 $item = $(item),
@@ -268,9 +268,9 @@
                     top: self.colHeightArr[inx]
                 };
 						//////////////////////////////
-						console.log("$item:");console.log($item)
-						console.log("$item.outerHeight:"+$item.outerHeight())
-						console.log(pos);
+						// console.log("$item:");console.log($item)
+						// console.log("$item.outerHeight:"+$item.outerHeight())
+						// console.log(pos);
             self.colHeightArr[inx] += op.gapHeight + $item.outerHeight();
 
             self.styleQueue.push({$ele: $item, style: pos});

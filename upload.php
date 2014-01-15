@@ -10,15 +10,17 @@ $uptypes=array(
     'image/x-png'
 );
 
+$class=isset($_REQUEST['class'])?$_REQUEST['class']:'';
+
 $max_file_size=2000000;     //上传文件大小限制, 单位BYTE
-$destination_folder="img/20140108/"; //上传文件路径
-$watermark=1;      //是否附加水印(1为加水印,其他为不加水印);
+$destination_folder="img/$class/"; //上传文件路径
+$watermark=0;      //是否附加水印(1为加水印,其他为不加水印);
 $watertype=1;      //水印类型(1为文字,2为图片)
 $waterposition=1;     //水印位置(1为左下角,2为右下角,3为左上角,4为右上角,5为居中);
-$waterstring="http://www.jb51.net/";  //水印字符串
+$waterstring="http://www.xxx/";  //水印字符串
 $waterimg="xplore.gif";    //水印图片
 $imgpreview=1;      //是否生成预览图(1为生成,其他为不生成);
-$imgpreviewsize=1/2;    //缩略图比例
+$imgpreviewsize=1/4;    //缩略图比例
 ?>
 <html>
 <head>
@@ -72,9 +74,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
     $filename=$file["tmp_name"];
     $image_size = getimagesize($filename);
-    $pinfo=pathinfo($file["name"]);
-    $ftype=$pinfo['extension'];
-    $destination = $destination_folder.time().".".$ftype;
+    $ftype=pathinfo($file["name"])['extension'];
+		$time=time();
+    $destination = $destination_folder.$time.".".$ftype;
     if (file_exists($destination) && $overwrite != true)
     {
         echo "同名文件已经存在了";
@@ -83,16 +85,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
     if(!move_uploaded_file ($filename, $destination))
     {
+				echo "move_uploaded_file:$filename to $destination";
         echo "移动文件出错";
         exit;
     }
 
-    $pinfo=pathinfo($destination);
-    $fname=$pinfo[basename];
+    $fname=pathinfo($destination)[basename];
+		$url=isset($_REQUEST['url'])?$_REQUEST['url']:'';
+		$desp=isset($_REQUEST['desp'])?$_REQUEST['desp']:'';
+		include "db.php";
+		if(!upload($fname,$url,$desp,$class,$time)){
+			echo "录入数据库出错";
+			exit;
+		}
+
     echo " <font color=red>已经成功上传</font><br>文件名:  <font color=blue>".$destination_folder.$fname."</font><br>";
     echo " 宽度:".$image_size[0];
     echo " 长度:".$image_size[1];
     echo "<br> 大小:".$file["size"]." bytes";
+		echo "<script> setTimeout(function(){window.location.href='uploadpage.html';},3000);</script>";
+
 
     if($watermark==1)
     {
