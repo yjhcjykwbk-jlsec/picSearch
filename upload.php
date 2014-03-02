@@ -11,7 +11,6 @@ $uptypes=array(
 );
 
 $class=isset($_REQUEST['class'])?$_REQUEST['class']:'';
-
 $max_file_size=2000000;     //上传文件大小限制, 单位BYTE
 $destination_folder="img/$class/"; //上传文件路径
 $watermark=0;      //是否附加水印(1为加水印,其他为不加水印);

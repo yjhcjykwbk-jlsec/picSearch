@@ -25,30 +25,32 @@ function MyWaterfall(){
 				}
 				else
 				$.each(data.items, function(i, item){
+          console.log("waterfall:");
+          console.log(item);
 					res.push(
 						'<div class="item masonry_brick masonry-brick" style="position: absolute; top: 0px; left: 0px;">'+
 						'<div class="item_t">'+ 
-						'<div class="img"> '+
-						'<a target="__blank'+i+'" href="'+item.src+'">'+
-						'<img width="'+210+'"  alt="'+item.src+'" src="'+item.src+'" data-pinit="registered" ready="alert(\" i am loaded\");">'+
-						'</a> '+
-						'<span class="class">weibo</span> '+
-						'<div class="btns"> '+
-						'<a href="http://www.jsfoot.com/js/images/more/2012-05-15/608.html" class="img_album_btn">加入专辑</a> '+
-						'</div> '+
-						'</div> '+
-						'<div class="desp"><span>this is a description.................</span></div> '+
-						'</div> '+
-						'<div class="item_b clearfix"> '+
-						'<div class="items_likes fl"> <a href="http://www.jsfoot.com" class="like_btn"></a> '+
-						'<em class="bold">916</em> '+
-						'</div> '+
-						'<div class="items_comment fr">'+
-						'<a href="http://www.jsfoot.com">评论</a>'+
-						'<em class="bold">(0)</em>'+
-						'</div> '+
-						'</div> '+
-						'</div>');
+            '<div class="img"> '+
+            '<a target="__blank'+i+'" href="'+item.src+'" id="'+item.id+'">'+
+            '<img width="'+210+'"  alt="'+item.id+' '+item.src+'" src="'+item.src+'" data-pinit="registered" ready="alert(\" i am loaded\");">'+
+            '</a> '+
+            '<span class="class">weibo</span> '+
+            '<div class="btns"> '+
+            '<a href="http://www.jsfoot.com/js/images/more/2012-05-15/608.html" class="img_album_btn">加入专辑</a> '+
+            '</div> '+
+            '</div> '+
+            '<div class="desp"><span>this is a description.................</span></div> '+
+            '</div> '+
+            '<div class="item_b clearfix"> '+
+            '<div class="items_likes fl"> <a href="http://www.jsfoot.com" class="like_btn"></a> '+
+            '<em class="bold">916</em> '+
+            '</div> '+
+            '<div class="items_comment fr">'+
+            '<a href="http://www.jsfoot.com">评论</a>'+
+            '<em class="bold">(0)</em>'+
+            '</div> '+
+            '</div> '+
+            '</div>');
 				});
 			self.success(res);
 			$('div.item img').each(function(){
@@ -58,10 +60,10 @@ function MyWaterfall(){
 		}
 	});
 };
-function ocr(img){
-	para="&img='"+img+"'";
+function ocr(id,img){
+	para="&img="+img+"&id="+id;
 	$.ajax({
-		url:"tesseract_ocr.php", 
+		url:"ocr/ocr_js.php", 
 		data:"action=ocr"+para, type:'post', dataType:'text', 
 		success:function(result){
 			console.log("ocr result():"+result);
@@ -93,11 +95,15 @@ var menuAdapter={
 	{ 
 		'ocr': 
 			function(t, target) { 
-				console.log("rightmenu:ocr():");
-				console.log(t.alt);
-				console.log(target);
+        console.log("function ocr:");
+        console.log(t);
+        console.log(target);
+        var ss=t.alt.split(" "); 
+        id=ss[0];
+        img="../"+ss[1];
+        console.log(id+"#"+img);
 				//<!-- alert('Trigger：' + t.id + ' 识别' + " taget by:" + $("td:eq(0)", target).text());  -->
-				ocr(t.alt);
+				ocr(id,img);
 			}
 	}, 
 	onShowMenu: function(e, menu) { 

@@ -6,7 +6,7 @@ class TesseractOCR {
     $tifImage       = TesseractOCR::convertImageToTif($originalImage);
 		// echo "recognize():tifImage:".$tifImage."\n";
     $configFile     = TesseractOCR::generateConfigFile(func_get_args());
-    $outputFile     = TesseractOCR::executeTesseract($tifImage, $configFile);
+    $outputFile     = TesseractOCR::executeTesseract($originalImage, $configFile);
 		// echo "recognize():outputFile:".$outputFile."\n";
     $recognizedText = TesseractOCR::readOutputFile($outputFile);
     // TesseractOCR::removeTempFiles($tifImage, $outputFile, $configFile);
@@ -40,7 +40,9 @@ class TesseractOCR {
 
   function executeTesseract($tifImage, $configFile) {
     $outputFile = sys_get_temp_dir().'/tesseract-ocr-output-'.rand();
-    exec("tesseract $tifImage $outputFile nobatch $configFile 2> /dev/null");
+    // $ex="tesseract $tifImage $outputFile -l eng";
+    exec("tesseract $tifImage $outputFile -l eng");// nobatch $configFile 2> /dev/null");
+    // echo $ex;
     return $outputFile.'.txt'; //tesseract appends txt extension to output file
   }
 
@@ -51,28 +53,8 @@ class TesseractOCR {
   function removeTempFiles() { array_map("unlink", func_get_args()); }
 }
 function myLog($txt){
-	$file=fopen("log.html","a");
+	$file=fopen("../log.txt","a");
 	fwrite($file,$txt);
 	fclose($file);
 }
-function main(){
-	$ocr=new TesseractOCR();
-	if(!isset($_REQUEST['img'])&&!isset($img)) {
-		echo "image not set\n";
-		return;
-	}
-	if(!isset($img)) $img=$_REQUEST['img'];
-	$txt="<p>input:$img</p>\n";
-	try {
-		$text=$ocr->recognize($img);
-		echo $text;
-		$txt.="<p>output:$text</p>\n";
-	}
-	catch(exception $e){
-		echo "ocr failed\n";
-		$txt.="<p>$e</p>\n";
-	}
-	myLog($txt);
-}
-main();
 ?>

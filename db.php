@@ -2,7 +2,7 @@
 /////datatype
 class mydb{
     var $Host="127.0.0.1:3306";
-    var $Database="pics";
+    var $Database="ocr";
     var $User="root";
     var $Pwd="1234";
     var $Link_ID=0;//
@@ -65,13 +65,13 @@ class mydb{
             @mysql_free_result($this->Query_ID);
             $this->Query_ID=0;
         }
-		}function log($sql){
+    } function log($sql){
 			$end="\n";
 			$file=fopen("log.sql","a");
 			fwrite($file,$sql.$end);
 			fclose($file);
-		}	
-}
+		}
+};
 $db=new Mydb();
 function ESCAPE($str){
 	return mysql_escape_string($str);
@@ -82,9 +82,21 @@ function upload($name,$url,$desp,$class,$time){
 	$name=ESCAPE($name);
 	$desp=ESCAPE($desp);
 	$class=ESCAPE($class);
-	$sql="insert into pic(name,url,desp,class,date) values('$name','$url','$desp','$class','$time');";
+	$sql="insert into pic(name,ref,desp) values('$name','$url','$desp');";
 	echo $sql;
 	return $db->query($sql);
+}
+function setOCR($id,$name,$text){
+	global $db;
+  $sql="insert into text(id,name,text) values('$id','$name','$text');";
+  $db->query($sql,true);
+  $sql="update pic set handled='1' where id='$id'";
+  $db->query($sql,true);
+}
+function getOCR($id){
+	global $db;
+  $sql="select * from text where id='$id'";
+  return $db->query($sql);
 }
 function indexed($name){
 	global $db;
@@ -100,16 +112,18 @@ function getImage(){
 }
 function getImageByDate($date){
 	global $db;
-	$sql="select * from pic where date(date)=$date";
+	$sql="select * from pic where date(timestamp)=$date";
 	$db->query($sql);
 	$res=$db->get_rows_array();
 	return $res;
 }
 function getImageByTime($time){
 	global $db;
-	$sql="select * from pic where date>=$time";
+	$sql="select * from pic where timestamp>=$time";
 	$db->query($sql);
 	$res=$db->get_rows_array();
 	return $res;
 }
+//test
+// setOCR(1,"changweibo","sfsd");
 ?>
