@@ -5,8 +5,9 @@ $items = array();
 $m=!isset($_GET['m'])?0:$_GET['m'];
 // include "dir.php";
 include_once "db.php";
+// $files=json_engetImage();
+// $files=json_decode($files,true);
 $files=getImage();
-$files=json_decode($files,true);
 for ($i=$m; $i < count($files) && $i < $m+10; $i++) { 
 		$item = array();
 		// $h = rand(1,20);

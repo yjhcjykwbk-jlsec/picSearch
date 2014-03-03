@@ -12,7 +12,7 @@ $uptypes=array(
 
 $class=isset($_REQUEST['class'])?$_REQUEST['class']:'';
 $max_file_size=2000000;     //上传文件大小限制, 单位BYTE
-$destination_folder="img/$class/"; //上传文件路径
+$destination_folder="DATASET/";//"img/$class/"; //上传文件路径
 $watermark=0;      //是否附加水印(1为加水印,其他为不加水印);
 $watertype=1;      //水印类型(1为文字,2为图片)
 $waterposition=1;     //水印位置(1为左下角,2为右下角,3为左上角,4为右上角,5为居中);

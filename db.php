@@ -37,8 +37,8 @@ class mydb{
 				if($log)$this->log($query);
         $this->Query_ID=mysql_query($query,$this->Link_ID);
         if(!$this->Query_ID)
-            $this->halt("sql query failed");
-        return $this->Query_ID;
+          return false;
+        else return $this->Query_ID;
     }function get_rows(){
         return mysql_num_rows($this->Query_ID);
     }function get_rows_array(){
@@ -66,11 +66,11 @@ class mydb{
             $this->Query_ID=0;
         }
     } function log($sql){
-			$end="\n";
-			$file=fopen("log.sql","a");
-			fwrite($file,$sql.$end);
-			fclose($file);
-		}
+        $end="\n";
+        $file=fopen("log.sql","a");
+        fwrite($file,$sql.$end);
+        fclose($file);
+    }
 };
 $db=new Mydb();
 function ESCAPE($str){
@@ -88,15 +88,22 @@ function upload($name,$url,$desp,$class,$time){
 }
 function setOCR($id,$name,$text){
 	global $db;
+  $name=ESCAPE($name);
+  $text=ESCAPE($text);
   $sql="insert into text(id,name,text) values('$id','$name','$text');";
-  $db->query($sql,true);
+  if(!$db->query($sql,true))
+  {
+    $sql="update text set text= '$text' where id='$id';";
+    $db->query($sql,true);
+  }
   $sql="update pic set handled='1' where id='$id'";
   $db->query($sql,true);
 }
 function getOCR($id){
 	global $db;
   $sql="select * from text where id='$id'";
-  return $db->query($sql);
+  if(!$db->query($sql)) return null;
+  return $db->get_rows_array();
 }
 function indexed($name){
 	global $db;
@@ -106,9 +113,9 @@ function indexed($name){
 function getImage(){
 	global $db;
 	$sql="select * from pic";
-	$db->query($sql);
+	if(!$db->query($sql)) return null;
 	$res=$db->get_rows_array();
-	return json_encode($res);
+	return $res;
 }
 function getImageByDate($date){
 	global $db;
