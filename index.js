@@ -63,7 +63,7 @@ function MyWaterfall(){
 function ocr(id,img){
 	para="&img="+img+"&id="+id;
 	$.ajax({
-		url:"ocr/ocr_js.php", 
+		url:"OCR/ocr_js.php", 
 		data:"action=ocr"+para, type:'post', dataType:'text', 
 		success:function(result){
 			console.log("ocr result():"+result);

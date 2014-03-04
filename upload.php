@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			echo "录入数据库出错";
 			exit;
 		}
-    include_once "ocr/ocr_db.php";
+    include_once "OCR/ocr_db.php";
     handleOCR($id,$fname);
 
     echo " <font color=red>已经成功上传</font><br>文件名:  <font color=blue>".$destination_folder.$fname."</font><br>";
