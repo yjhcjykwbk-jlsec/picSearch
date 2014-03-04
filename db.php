@@ -83,8 +83,10 @@ function upload($name,$url,$desp,$class,$time){
 	$desp=ESCAPE($desp);
 	$class=ESCAPE($class);
 	$sql="insert into pic(name,ref,desp) values('$name','$url','$desp');";
-	echo $sql;
-	return $db->query($sql);
+  if(!$db->query($sql)) return -1;
+  $id=$db->query("select @@id from pic where");
+  $db->log("last insert id:$id");
+	return $id;
 }
 function setOCR($id,$name,$text){
 	global $db;

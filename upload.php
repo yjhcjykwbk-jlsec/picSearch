@@ -93,10 +93,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		$url=isset($_REQUEST['url'])?$_REQUEST['url']:'';
 		$desp=isset($_REQUEST['desp'])?$_REQUEST['desp']:'';
 		include "db.php";
-		if(!upload($fname,$url,$desp,$class,$time)){
+    $id=upload($fname,$url,$desp,$class,$time);
+    if($id==-1){
 			echo "录入数据库出错";
 			exit;
 		}
+    include_once "ocr/ocr_db.php";
+    handleOCR($id,$fname);
 
     echo " <font color=red>已经成功上传</font><br>文件名:  <font color=blue>".$destination_folder.$fname."</font><br>";
     echo " 宽度:".$image_size[0];
