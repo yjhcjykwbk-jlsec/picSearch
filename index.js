@@ -61,6 +61,7 @@ function MyWaterfall(){
 	});
 };
 function ocr(id,img){
+  img="../"+img;//will send to ocr/ocr_js.php for handling
 	para="&img="+img+"&id="+id;
 	$.ajax({
 		url:"OCR/ocr_js.php", 
@@ -68,6 +69,17 @@ function ocr(id,img){
 		success:function(result){
 			console.log("ocr result():"+result);
 			alert(result);
+		}
+	});
+}
+function delImg(id,img){
+	$.ajax({
+		url:"img_js.php", 
+		data:"action=delImg&id="+id+"&img="+img, type:'post', dataType:'text', 
+		success:function(result){
+      if(result=="true")
+        alert("deleted");
+      else alert(result);
 		}
 	});
 }
@@ -100,10 +112,21 @@ var menuAdapter={
         console.log(target);
         var ss=t.alt.split(" "); 
         id=ss[0];
-        img="../"+ss[1];
-        console.log(id+"#"+img);
+        img=ss[1];
+        console.log(id+"#"+img+" will be ocred");
 				//<!-- alert('Trigger：' + t.id + ' 识别' + " taget by:" + $("td:eq(0)", target).text());  -->
 				ocr(id,img);
+			},
+		'del': 
+			function(t, target) { 
+        console.log("function delete:");
+        console.log(t);
+        console.log(target);
+        var ss=t.alt.split(" "); 
+        id=ss[0];
+        img=ss[1];
+        console.log(id+"#"+img+" will be deleted");
+				delImg(id,img);
 			}
 	}, 
 	onShowMenu: function(e, menu) { 

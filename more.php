@@ -8,12 +8,12 @@ include_once "db.php";
 // $files=json_engetImage();
 // $files=json_decode($files,true);
 $files=getImage();
-for ($i=$m; $i < count($files) && $i < $m+10; $i++) { 
+for ($i=$m; $i < count($files) && $i < $m+30; $i++) { 
 		$item = array();
 		// $h = rand(1,20);
 		// print_r( $files["$i"] );
 		$file=$files["$i"];
-		$item['src'] ="DATASET/".$file["name"]; 
+		$item['src'] =$file["name"]; 
 		$item['href'] =$file['ref'];
     $item['alt']=$file['desp'];
     $item['id']=$file['id'];

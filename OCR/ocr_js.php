@@ -1,6 +1,6 @@
 <?php
-require "tesseract_ocr.php";
-require "../db.php";
+include_once "../OCR/tesseract_ocr.php";
+include_once "../db.php";
 //api to js
 function main(){
 	$ocr=new TesseractOCR();

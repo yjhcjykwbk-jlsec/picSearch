@@ -84,10 +84,25 @@ function upload($name,$url,$desp,$class,$time){
 	$class=ESCAPE($class);
 	$sql="insert into pic(name,ref,desp) values('$name','$url','$desp');";
   if(!$db->query($sql)) return -1;
-  $id=$db->query("select @@id from pic where");
+
+  $db->query("select LAST_INSERT_ID() as t from pic");
+  $tmp=$db->get_rows_array();
+  $id=$tmp[0]['t'];
   $db->log("last insert id:$id");
 	return $id;
 }
+function delImg($id,$img){
+  if (file_exists($img)) {
+    $result=unlink ($img);
+  }
+	global $db;
+	$sql="delete from text where id='$id'";
+  $db->query($sql,true);
+	$sql="delete from pic where id='$id'";
+  if(!$db->query($sql,true)) return false;
+  return true;
+}
+
 function setOCR($id,$name,$text){
 	global $db;
   $name=ESCAPE($name);

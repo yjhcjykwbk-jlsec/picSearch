@@ -1,6 +1,4 @@
 <?php
-require "tesseract_ocr.php";
-require_once "../db.php";
 //api to js
 function handleOCR($id,$img){
   $ocr=new TesseractOCR();

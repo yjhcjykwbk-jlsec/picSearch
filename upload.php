@@ -89,15 +89,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         exit;
     }
 
-    $fname=pathinfo($destination)[basename];
+    $fname=$destination;//pathinfo($destination)[basename];
 		$url=isset($_REQUEST['url'])?$_REQUEST['url']:'';
 		$desp=isset($_REQUEST['desp'])?$_REQUEST['desp']:'';
-		include "db.php";
+
+		include_once "db.php";
     $id=upload($fname,$url,$desp,$class,$time);
     if($id==-1){
 			echo "录入数据库出错";
 			exit;
 		}
+    echo "image id:$id";
+    include_once "OCR/tesseract_ocr.php";
     include_once "OCR/ocr_db.php";
     handleOCR($id,$fname);
 
