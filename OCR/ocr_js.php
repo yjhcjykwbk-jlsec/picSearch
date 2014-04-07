@@ -5,8 +5,7 @@ include_once "../db.php";
 function main(){
 	$ocr=new TesseractOCR();
 	if(!isset($_REQUEST['img'])&&!isset($img)) {
-		echo "image not set\n";
-    myLog("image not set\n");
+    myLog("image not set",true);
 		return;
 	}
 	if(!isset($img)) $img=$_REQUEST['img'];

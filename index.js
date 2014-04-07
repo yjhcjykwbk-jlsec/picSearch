@@ -34,20 +34,9 @@ function MyWaterfall(){
             '<a target="__blank'+i+'" href="'+item.src+'" id="'+item.id+'">'+
             '<img width="'+210+'"  alt="'+item.id+' '+item.src+'" src="'+item.src+'" data-pinit="registered" ready="alert(\" i am loaded\");">'+
             '</a> '+
-            '<span class="class">weibo</span> '+
-            '<div class="btns"> '+
-            '<a href="http://www.jsfoot.com/js/images/more/2012-05-15/608.html" class="img_album_btn">加入专辑</a> '+
-            '</div> '+
-            '</div> '+
-            '<div class="desp"><span>this is a description.................</span></div> '+
             '</div> '+
             '<div class="item_b clearfix"> '+
             '<div class="items_likes fl"> <a href="http://www.jsfoot.com" class="like_btn"></a> '+
-            '<em class="bold">916</em> '+
-            '</div> '+
-            '<div class="items_comment fr">'+
-            '<a href="http://www.jsfoot.com">评论</a>'+
-            '<em class="bold">(0)</em>'+
             '</div> '+
             '</div> '+
             '</div>');

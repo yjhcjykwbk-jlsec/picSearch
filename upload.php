@@ -20,6 +20,7 @@ $waterstring="http://www.xxx/";  //水印字符串
 $waterimg="xplore.gif";    //水印图片
 $imgpreview=1;      //是否生成预览图(1为生成,其他为不生成);
 $imgpreviewsize=1/4;    //缩略图比例
+
 ?>
 <html>
 <head>
@@ -40,14 +41,15 @@ input
 </head>
 
 <body>
-
 <?php
+include_once "db.php";
+myLog("a new upload request:".print_r($_FILES,true));
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    if (!is_uploaded_file($_FILES["upfile"][tmp_name]))
+    if (!is_uploaded_file($_FILES["upfile"]['tmp_name']))
     //是否存在文件
     {
-         echo "图片不存在!";
+         myLog( "图片不存在!",true);
          exit;
     }
 
@@ -55,16 +57,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     if($max_file_size < $file["size"])
     //检查文件大小
     {
-        echo "文件太大!";
+        myLog( "文件太大!",true);
         exit;
     }
 
-    if(!in_array($file["type"], $uptypes))
-    //检查文件类型
-    {
-        echo "文件类型不符!".$file["type"];
-        exit;
-    }
+    // if(!in_array($file["type"], $uptypes))
+    // //检查文件类型
+    // {
+        // myLog( "文件类型不符!".$file["type"]);
+        // exit;
+    // }
 
     if(!file_exists($destination_folder))
     {
@@ -78,14 +80,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $destination = $destination_folder.$time.".".$ftype;
     if (file_exists($destination) && $overwrite != true)
     {
-        echo "同名文件已经存在了";
+        myLog( "同名文件已经存在了",true);
         exit;
     }
 
     if(!move_uploaded_file ($filename, $destination))
     {
-				echo "move_uploaded_file:$filename to $destination";
-        echo "移动文件出错";
+				myLog( "move_uploaded_file:$filename to $destination");
+        myLog( "移动文件出错",true);
         exit;
     }
 
@@ -93,16 +95,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		$url=isset($_REQUEST['url'])?$_REQUEST['url']:'';
 		$desp=isset($_REQUEST['desp'])?$_REQUEST['desp']:'';
 
-		include_once "db.php";
     $id=upload($fname,$url,$desp,$class,$time);
     if($id==-1){
-			echo "录入数据库出错";
+			myLog( "录入数据库出错",true);
 			exit;
 		}
-    echo "image id:$id";
+
     include_once "OCR/tesseract_ocr.php";
     include_once "OCR/ocr_db.php";
+    myLog("handling with ocr:");
     handleOCR($id,$fname);
+    myLog("上传成功:".$fname);
 
     echo " <font color=red>已经成功上传</font><br>文件名:  <font color=blue>".$destination_folder.$fname."</font><br>";
     echo " 宽度:".$image_size[0];
@@ -134,6 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             $simage =imagecreatefromwbmp($destination);
             break;
             default:
+            myLog("不支持的文件类型",true);
             die("不支持的文件类型");
             exit;
         }

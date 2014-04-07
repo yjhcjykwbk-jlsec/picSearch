@@ -52,9 +52,4 @@ class TesseractOCR {
 
   function removeTempFiles() { array_map("unlink", func_get_args()); }
 }
-function myLog($txt){
-	$file=fopen("../log.txt","a");
-	fwrite($file,$txt);
-	fclose($file);
-}
 ?>

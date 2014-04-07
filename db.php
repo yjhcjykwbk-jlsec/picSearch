@@ -73,6 +73,11 @@ class mydb{
     }
 };
 $db=new Mydb();
+function myLog($str,$echo=false){
+	global $db;
+  $db->log($str);
+  if($echo) echo $str;
+}
 function ESCAPE($str){
 	return mysql_escape_string($str);
 }
@@ -83,9 +88,9 @@ function upload($name,$url,$desp,$class,$time){
 	$desp=ESCAPE($desp);
 	$class=ESCAPE($class);
 	$sql="insert into pic(name,ref,desp) values('$name','$url','$desp');";
-  if(!$db->query($sql)) return -1;
+  if(!$db->query($sql,true)) return -1;
 
-  $db->query("select LAST_INSERT_ID() as t from pic");
+  $db->query("select LAST_INSERT_ID() as t from pic",true);
   $tmp=$db->get_rows_array();
   $id=$tmp[0]['t'];
   $db->log("last insert id:$id");

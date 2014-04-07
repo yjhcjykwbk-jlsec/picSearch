@@ -4,7 +4,7 @@ a,img{border:0;}
 em{font-style:normal;}
 a{text-decoration:none;cursor:pointer;color:#666666;}
 a:hover{color:#FF6699;}
-body{background:url("images/bodybg.jpg") repeat #f5f6f7;color:#666666;font-family:Arial;font-size:12px;}
+body{background:url("images/bodybg.jpg") repeat #000;color:#666666;font-family:Arial;font-size:12px;}
 .fl{float:left;}.fr{float:right;}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 .clearfix{display:inline-table;}
