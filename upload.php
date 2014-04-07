@@ -95,6 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		$url=isset($_REQUEST['url'])?$_REQUEST['url']:'';
 		$desp=isset($_REQUEST['desp'])?$_REQUEST['desp']:'';
 
+    //record the image into datebase
     $id=upload($fname,$url,$desp,$class,$time);
     if($id==-1){
 			myLog( "录入数据库出错",true);

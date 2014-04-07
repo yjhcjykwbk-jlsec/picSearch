@@ -69,8 +69,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
     include_once "OCR/tesseract_ocr.php";
     include_once "OCR/ocr_db.php";
+    include_once "ALARM/alarm.php";
+
     myLog("handling with ocr:");
-    handleOCR($id,$fname);
+    $text=handleOCR($id,$fname);
+    //to alarm if sensitive message found
+    detect($text,$ServerHost.$fname);
+
     myLog("上传成功:".$fname);
 
     echo $ServerHost.$fname;

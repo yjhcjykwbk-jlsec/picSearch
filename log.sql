@@ -1292,3 +1292,223 @@ delete from text where id='92'
 delete from pic where id='92'
 delete from text where id='85'
 delete from pic where id='85'
+a new upload request:Array
+(
+    [upfile] => Array
+        (
+            [name] => IMG_20140330_140155.jpg
+            [type] => 
+            [tmp_name] => /tmp/php9BY4gq
+            [error] => 0
+            [size] => 25510
+        )
+
+)
+
+insert into pic(name,ref,desp) values('DATASET/1396853676.jpg','','');
+select LAST_INSERT_ID() as t from pic
+last insert id:119
+handling with ocr:
+insert into text(id,name,text) values('119','DATASET/1396853676.jpg','');
+update pic set handled='1' where id='119'
+上传成功:DATASET/1396853676.jpg
+a new upload request:Array
+(
+    [upfile] => Array
+        (
+            [name] => IMG_20140330_135955_1.jpg
+            [type] => 
+            [tmp_name] => /tmp/phpXgQ9pY
+            [error] => 0
+            [size] => 16337
+        )
+
+)
+
+insert into pic(name,ref,desp) values('DATASET/1396853799.jpg','','');
+select LAST_INSERT_ID() as t from pic
+last insert id:120
+handling with ocr:
+insert into text(id,name,text) values('120','DATASET/1396853799.jpg','');
+update pic set handled='1' where id='120'
+上传成功:DATASET/1396853799.jpg
+a new upload request:Array
+(
+    [upfile] => Array
+        (
+            [name] => f80c0629321e8d7e2cacb1043c2292f0_crop.jpg
+            [type] => 
+            [tmp_name] => /tmp/phpFjnRhU
+            [error] => 0
+            [size] => 222740
+        )
+
+)
+
+insert into pic(name,ref,desp) values('DATASET/1396860754.jpg','fromandroidpn','hhh');
+select LAST_INSERT_ID() as t from pic
+last insert id:121
+handling with ocr:
+insert into text(id,name,text) values('121','DATASET/1396860754.jpg','');
+update pic set handled='1' where id='121'
+上传成功:DATASET/1396860754.jpg
+a new upload request:Array
+(
+    [upfile] => Array
+        (
+            [name] => f80c0629321e8d7e2cacb1043c2292f0_crop.jpg
+            [type] => 
+            [tmp_name] => /tmp/phpkjglpz
+            [error] => 0
+            [size] => 222740
+        )
+
+)
+
+insert into pic(name,ref,desp) values('DATASET/1396866976.jpg','','');
+select LAST_INSERT_ID() as t from pic
+last insert id:122
+handling with ocr:
+insert into text(id,name,text) values('122','DATASET/1396866976.jpg','');
+update pic set handled='1' where id='122'
+上传成功:DATASET/1396866976.jpg
+a new upload request:Array
+(
+    [upfile] => Array
+        (
+            [name] => Screenshot_2014-03-25-11-18-21.png
+            [type] => 
+            [tmp_name] => /tmp/phpMHgmlY
+            [error] => 0
+            [size] => 170904
+        )
+
+)
+
+insert into pic(name,ref,desp) values('DATASET/1396867045.png','','');
+select LAST_INSERT_ID() as t from pic
+last insert id:123
+handling with ocr:
+insert into text(id,name,text) values('123','DATASET/1396867045.png','-.  ’v‘ fulﬁll 42% . J:a=11:\'|8\n\nQ 5%\n\nF’\n()1 O\n\nW I I W\nWE EE W13\n\nifiilﬂﬁ\n\nII\n\niNode§F\'ﬁ3ﬁ ﬂﬁﬁfittlﬂﬂ 3‘(1‘F§i!\n\na @191\n\n Elﬁéﬁili}\n\n  ~ --\n«1-« \"‘ DI’');
+update pic set handled='1' where id='123'
+上传成功:DATASET/1396867045.png
+a new upload request:Array
+(
+    [upfile] => Array
+        (
+            [name] => Screenshot_2014-03-25-11-18-21.png
+            [type] => 
+            [tmp_name] => /tmp/php4svTQE
+            [error] => 0
+            [size] => 170904
+        )
+
+)
+
+insert into pic(name,ref,desp) values('DATASET/1396867057.png','','');
+select LAST_INSERT_ID() as t from pic
+last insert id:124
+handling with ocr:
+insert into text(id,name,text) values('124','DATASET/1396867057.png','-.  ’v‘ fulﬁll 42% . J:a=11:\'|8\n\nQ 5%\n\nF’\n()1 O\n\nW I I W\nWE EE W13\n\nifiilﬂﬁ\n\nII\n\niNode§F\'ﬁ3ﬁ ﬂﬁﬁfittlﬂﬂ 3‘(1‘F§i!\n\na @191\n\n Elﬁéﬁili}\n\n  ~ --\n«1-« \"‘ DI’');
+update pic set handled='1' where id='124'
+上传成功:DATASET/1396867057.png
+a new upload request:Array
+(
+    [upfile] => Array
+        (
+            [name] => Screenshot_2014-03-25-11-18-21.png
+            [type] => 
+            [tmp_name] => /tmp/phpEkR8MO
+            [error] => 0
+            [size] => 170904
+        )
+
+)
+
+insert into pic(name,ref,desp) values('DATASET/1396867076.png','','');
+select LAST_INSERT_ID() as t from pic
+last insert id:125
+handling with ocr:
+insert into text(id,name,text) values('125','DATASET/1396867076.png','-.  ’v‘ fulﬁll 42% . J:a=11:\'|8\n\nQ 5%\n\nF’\n()1 O\n\nW I I W\nWE EE W13\n\nifiilﬂﬁ\n\nII\n\niNode§F\'ﬁ3ﬁ ﬂﬁﬁfittlﬂﬂ 3‘(1‘F§i!\n\na @191\n\n Elﬁéﬁili}\n\n  ~ --\n«1-« \"‘ DI’');
+update pic set handled='1' where id='125'
+上传成功:DATASET/1396867076.png
+a new upload request:Array
+(
+    [upfile] => Array
+        (
+            [name] => 1865f9008176d4202a9d78563d54ed99_crop.jpg
+            [type] => 
+            [tmp_name] => /tmp/phpV60MD8
+            [error] => 0
+            [size] => 324997
+        )
+
+)
+
+insert into pic(name,ref,desp) values('DATASET/1396867125.jpg','','');
+select LAST_INSERT_ID() as t from pic
+last insert id:126
+handling with ocr:
+insert into text(id,name,text) values('126','DATASET/1396867125.jpg','E\n\nHE E}? Hﬁ 3E3EiJJﬂﬁ\n\nII\n\nEEE iNode§F\'ﬁ ﬂﬁ§kiRH11 Slﬁiﬁii');
+update pic set handled='1' where id='126'
+上传成功:DATASET/1396867125.jpg
+a new upload request:Array
+(
+    [upfile] => Array
+        (
+            [name] => Screenshot_2014-03-25-11-18-21.png
+            [type] => 
+            [tmp_name] => /tmp/phpGefhOg
+            [error] => 0
+            [size] => 170904
+        )
+
+)
+
+insert into pic(name,ref,desp) values('DATASET/1396867917.png','','');
+select LAST_INSERT_ID() as t from pic
+last insert id:127
+handling with ocr:
+insert into text(id,name,text) values('127','DATASET/1396867917.png','-.  ’v‘ fulﬁll 42% . J:a=11:\'|8\n\nQ 5%\n\nF’\n()1 O\n\nW I I W\nWE EE W13\n\nifiilﬂﬁ\n\nII\n\niNode§F\'ﬁ3ﬁ ﬂﬁﬁfittlﬂﬂ 3‘(1‘F§i!\n\na @191\n\n Elﬁéﬁili}\n\n  ~ --\n«1-« \"‘ DI’');
+update pic set handled='1' where id='127'
+上传成功:DATASET/1396867917.png
+a new upload request:Array
+(
+    [upfile] => Array
+        (
+            [name] => Screenshot_2014-03-25-11-18-21.png
+            [type] => 
+            [tmp_name] => /tmp/phpMIdi3o
+            [error] => 0
+            [size] => 170904
+        )
+
+)
+
+insert into pic(name,ref,desp) values('DATASET/1396868144.png','','');
+select LAST_INSERT_ID() as t from pic
+last insert id:128
+handling with ocr:
+insert into text(id,name,text) values('128','DATASET/1396868144.png','-.  ’v‘ fulﬁll 42% . J:a=11:\'|8\n\nQ 5%\n\nF’\n()1 O\n\nW I I W\nWE EE W13\n\nifiilﬂﬁ\n\nII\n\niNode§F\'ﬁ3ﬁ ﬂﬁﬁfittlﬂﬂ 3‘(1‘F§i!\n\na @191\n\n Elﬁéﬁili}\n\n  ~ --\n«1-« \"‘ DI’');
+update pic set handled='1' where id='128'
+上传成功:DATASET/1396868144.png
+a new upload request:Array
+(
+    [upfile] => Array
+        (
+            [name] => IMG_LOAD_20140309_9018FA6AD1CC46F071A6E60539227F0A.jpg
+            [type] => 
+            [tmp_name] => /tmp/phpClXIAC
+            [error] => 0
+            [size] => 252987
+        )
+
+)
+
+insert into pic(name,ref,desp) values('DATASET/1396868183.jpg','','');
+select LAST_INSERT_ID() as t from pic
+last insert id:129
+handling with ocr:
+insert into text(id,name,text) values('129','DATASET/1396868183.jpg','');
+update pic set handled='1' where id='129'
+上传成功:DATASET/1396868183.jpg

@@ -14,7 +14,10 @@ function main(){
 	try {
 		$text=$ocr->recognize($img);
     echo $text;
+
+    //record the ocr result
     setOCR($id,$img,$text);
+
     // echo " ocr_img:$img ocr_res:".$text;
 		$txt.="<p>output:$text</p>\n";
 	}
