@@ -67,7 +67,7 @@ class mydb{
 		}
 	} function log($sql){
 		$end="\n";
-		$file=fopen("log.sql","a");
+		$file=fopen("log.txt","a");
 		fwrite($file,$sql.$end);
 		fclose($file);
 	}
