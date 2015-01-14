@@ -1,0 +1,67 @@
+[Tue Mar  4 21:32:46.395 2014] [14585] listening on all interfaces, port=9346
+[Tue Mar  4 21:32:46.395 2014] [14585] listening on all interfaces, port=9340
+[Tue Mar  4 21:32:46.402 2014] [14586] accepting connections
+[Tue Mar  4 23:46:00.091 2014] [19294] WARNING: failed to receive MySQL request body (client=127.0.0.1:55254(2), exp=0, error='No child processes')
+[Tue Mar  4 23:46:02.124 2014] [19298] WARNING: failed to receive MySQL request body (client=127.0.0.1:55255(3), exp=0, error='No child processes')
+[Tue Mar  4 23:46:09.524 2014] [19299] WARNING: failed to receive MySQL request body (client=127.0.0.1:55257(4), exp=0, error='No child processes')
+[Tue Mar  4 23:47:15.893 2014] [19307] WARNING: failed to receive MySQL request body (client=127.0.0.1:55259(5), exp=0, error='No child processes')
+[Tue Mar  4 23:47:16.831 2014] [19308] WARNING: failed to receive MySQL request body (client=127.0.0.1:55260(6), exp=0, error='No child processes')
+[Tue Mar  4 23:47:55.495 2014] [19317] WARNING: failed to receive MySQL request body (client=127.0.0.1:55264(7), exp=0, error='No child processes')
+[Tue Mar  4 23:49:43.744 2014] [19335] WARNING: failed to receive MySQL request body (client=127.0.0.1:55266(8), exp=0, error='No child processes')
+[Tue Mar  4 23:49:44.702 2014] [19336] WARNING: failed to receive MySQL request body (client=127.0.0.1:55267(9), exp=0, error='No child processes')
+[Tue Mar  4 23:49:45.246 2014] [19337] WARNING: failed to receive MySQL request body (client=127.0.0.1:55268(10), exp=0, error='No child processes')
+[Tue Mar  4 23:49:45.675 2014] [19338] WARNING: failed to receive MySQL request body (client=127.0.0.1:55269(11), exp=0, error='No child processes')
+[Tue Mar  4 23:49:46.063 2014] [19339] WARNING: failed to receive MySQL request body (client=127.0.0.1:55270(12), exp=0, error='No child processes')
+[Tue Mar  4 23:52:33.415 2014] [19549] WARNING: failed to receive MySQL request body (client=127.0.0.1:55287(13), exp=0, error='No child processes')
+[Tue Mar  4 23:52:34.611 2014] [19550] WARNING: failed to receive MySQL request body (client=127.0.0.1:55288(14), exp=0, error='No child processes')
+[Tue Mar  4 23:52:35.282 2014] [19551] WARNING: failed to receive MySQL request body (client=127.0.0.1:55289(15), exp=0, error='No child processes')
+[Tue Mar  4 23:52:35.889 2014] [19552] WARNING: failed to receive MySQL request body (client=127.0.0.1:55290(16), exp=0, error='No child processes')
+[Tue Mar  4 23:52:36.939 2014] [19553] WARNING: failed to receive MySQL request body (client=127.0.0.1:55291(17), exp=0, error='No child processes')
+[Tue Mar  4 23:52:45.154 2014] [19554] WARNING: failed to receive MySQL request body (client=127.0.0.1:55295(18), exp=0, error='No child processes')
+[Tue Mar  4 23:52:54.325 2014] [19555] WARNING: failed to receive MySQL request body (client=127.0.0.1:55297(19), exp=0, error='No child processes')
+[Tue Mar  4 23:52:54.975 2014] [19556] WARNING: failed to receive MySQL request body (client=127.0.0.1:55298(20), exp=0, error='No child processes')
+[Tue Mar  4 23:52:55.029 2014] [19557] WARNING: failed to receive MySQL request body (client=127.0.0.1:55299(21), exp=0, error='No child processes')
+[Tue Mar  4 23:52:55.072 2014] [19558] WARNING: failed to receive MySQL request body (client=127.0.0.1:55300(22), exp=0, error='No child processes')
+[Tue Mar  4 23:52:55.119 2014] [19559] WARNING: failed to receive MySQL request body (client=127.0.0.1:55301(23), exp=0, error='No child processes')
+[Tue Mar  4 23:52:55.214 2014] [19560] WARNING: failed to receive MySQL request body (client=127.0.0.1:55303(24), exp=0, error='No child processes')
+[Tue Mar  4 23:52:55.419 2014] [19561] WARNING: failed to receive MySQL request body (client=127.0.0.1:55304(25), exp=0, error='No child processes')
+[Tue Mar  4 23:53:03.934 2014] [19569] WARNING: failed to receive MySQL request body (client=127.0.0.1:55306(26), exp=0, error='No child processes')
+[Tue Mar  4 23:53:04.697 2014] [19570] WARNING: failed to receive MySQL request body (client=127.0.0.1:55307(27), exp=0, error='No child processes')
+[Tue Mar  4 23:54:52.059 2014] [19584] WARNING: failed to receive MySQL request body (client=127.0.0.1:55309(28), exp=0, error='No child processes')
+[Tue Mar  4 23:54:52.759 2014] [19585] WARNING: failed to receive MySQL request body (client=127.0.0.1:55310(29), exp=0, error='No child processes')
+[Tue Mar  4 23:55:49.658 2014] [19733] WARNING: failed to receive MySQL request body (client=127.0.0.1:55316(30), exp=0, error='No child processes')
+[Tue Mar  4 23:55:50.465 2014] [19734] WARNING: failed to receive MySQL request body (client=127.0.0.1:55317(31), exp=0, error='No child processes')
+[Tue Mar  4 23:55:51.094 2014] [19735] WARNING: failed to receive MySQL request body (client=127.0.0.1:55318(32), exp=0, error='No child processes')
+[Tue Mar  4 23:56:03.506 2014] [19743] WARNING: failed to receive MySQL request body (client=127.0.0.1:55320(33), exp=0, error='No child processes')
+[Tue Mar  4 23:56:40.684 2014] [19746] WARNING: failed to receive MySQL request body (client=127.0.0.1:55322(34), exp=0, error='No child processes')
+[Tue Mar  4 23:57:02.340 2014] [19754] WARNING: failed to receive MySQL request body (client=127.0.0.1:55324(35), exp=0, error='No child processes')
+[Tue Mar  4 23:57:03.245 2014] [19755] WARNING: failed to receive MySQL request body (client=127.0.0.1:55325(36), exp=0, error='No child processes')
+[Tue Mar  4 23:57:03.842 2014] [19756] WARNING: failed to receive MySQL request body (client=127.0.0.1:55326(37), exp=0, error='No child processes')
+[Tue Mar  4 23:57:05.164 2014] [19757] WARNING: failed to receive MySQL request body (client=127.0.0.1:55327(38), exp=0, error='No child processes')
+[Tue Mar  4 23:59:13.572 2014] [19767] WARNING: failed to receive MySQL request body (client=127.0.0.1:55342(39), exp=0, error='No child processes')
+[Tue Mar  4 23:59:15.277 2014] [19768] WARNING: failed to receive MySQL request body (client=127.0.0.1:55343(40), exp=0, error='No child processes')
+[Wed Mar  5 11:25:01.920 2014] [14586] caught SIGHUP (seamless=1, in queue=1)
+[Wed Mar  5 11:25:01.943 2014] [14586] rotating index 'text_text': success
+[Wed Mar  5 11:25:01.944 2014] [14586] rotating finished
+[Wed Mar  5 12:26:59.799 2014] [14586] caught SIGHUP (seamless=1, in queue=1)
+[Wed Mar  5 12:26:59.805 2014] [14586] rotating index 'text_text': success
+[Wed Mar  5 12:26:59.805 2014] [14586] rotating finished
+[Tue Jan 13 03:49:30.631 2015] [ 5990] listening on all interfaces, port=9346
+[Tue Jan 13 03:49:30.635 2015] [ 5990] listening on all interfaces, port=9340
+[Tue Jan 13 03:49:30.666 2015] [ 5991] accepting connections
+[Tue Jan 13 04:45:17.538 2015] [ 5991] caught SIGTERM, shutting down
+[Tue Jan 13 04:45:17.596 2015] [ 5991] shutdown complete
+[Wed Jan 14 15:07:43.290 2015] [ 3737] listening on all interfaces, port=9346
+[Wed Jan 14 15:07:43.290 2015] [ 3737] listening on all interfaces, port=9340
+[Wed Jan 14 15:07:43.321 2015] [ 3738] accepting connections
+[Wed Jan 14 17:22:40.757 2015] [ 3738] caught SIGTERM, shutting down
+[Wed Jan 14 17:22:40.797 2015] [ 3738] shutdown complete
+[Wed Jan 14 17:22:44.889 2015] [ 5597] listening on all interfaces, port=9346
+[Wed Jan 14 17:22:44.889 2015] [ 5597] listening on all interfaces, port=9340
+[Wed Jan 14 17:22:44.895 2015] [ 5598] accepting connections
+[Wed Jan 14 17:32:44.353 2015] [ 5598] caught SIGHUP (seamless=1, in queue=1)
+[Wed Jan 14 17:32:44.359 2015] [ 5598] rotating index 'text_text': success
+[Wed Jan 14 17:32:44.359 2015] [ 5598] rotating finished
+[Wed Jan 14 17:46:09.117 2015] [ 5598] caught SIGHUP (seamless=1, in queue=1)
+[Wed Jan 14 17:46:09.122 2015] [ 5598] rotating index 'text_text': success
+[Wed Jan 14 17:46:09.122 2015] [ 5598] rotating finished

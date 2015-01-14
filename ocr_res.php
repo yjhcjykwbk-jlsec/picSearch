@@ -8,6 +8,8 @@
   <style>
   td.ocr_res { max-width:300px; min-width:250px; min-height:100px; font-weight:bold;} 
   img.ocr_pic{ max-width:600px; max-height:200px;min-width:500px;} 
+  body{background:#803030;}
+  table{background:#eee;}
   </style>
 </head>
 <body>
@@ -33,7 +35,7 @@ function search(query){
         $("#ocr_table").empty();
         console.log(result);
         for(i=0;i<result.length;i++){
-          var newRow="<tr><td><img class='ocr_pic' src='"+result[i]['name']+"'></td>"+"<td class='ocr_res'>"+result[i]['text']+"</td>";
+          var newRow="<tr><td>"+result[i]['name']+"</td><td><img class='ocr_pic' src='"+result[i]['name']+"'></td>"+"<td class='ocr_res'>"+result[i]['text']+"</td>";
           $('#ocr_table').append(newRow);
         }
       }
@@ -49,6 +51,7 @@ function search(query){
 <?php 
 include_once "db.php";
 $files=getImage();
+// print_r($files);
 for($i=0;$i<count($files);$i++){
   $file=$files[$i];
   $file['ocr']="not valid";
@@ -65,7 +68,7 @@ for($i=0;$i<count($files);$i++){
 for($i=0;$i<count($files);$i++){
   $file=$files[$i];
 ?>
-<tr><td><img class="ocr_pic" src="<?php echo $file['name'];?>"></td> <td class="ocr_res"><?php echo $file['ocr'];?></td>
+<tr><td><?php echo $file['name']; ?></td><td><img class="ocr_pic" src="<?php echo $file['name'];?>"></td> <td class="ocr_res"><?php echo $file['ocr'];?></td>
 </tr>
 <?php } ?>
 </table>
