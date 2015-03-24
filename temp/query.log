@@ -211,3 +211,15 @@ t'
 /* Wed Jan 14 17:22:50.171 2015 conn 4 real 0.000 wall 0.000 found 0 */ SELECT * FROM text_text WHERE MATCH('price') OPTION ranker=proximity;
 /* Wed Jan 14 17:22:50.405 2015 conn 5 real 0.000 wall 0.000 found 0 */ SELECT * FROM text_text WHERE MATCH('price') OPTION ranker=proximity;
 /* Wed Jan 14 17:46:27.048 2015 conn 6 real 0.001 wall 0.001 found 1 */ SELECT * FROM text_text WHERE MATCH('OFFER') OPTION ranker=proximity;
+/* Thu Jan 15 22:21:16.201 2015 conn 1 real 0.040 wall 0.040 found 6 */ SELECT * FROM text_text WHERE MATCH('a') OPTION ranker=proximity;
+/* Thu Jan 15 22:23:11.508 2015 conn 2 real 0.000 wall 0.000 found 1 */ SELECT * FROM text_text WHERE MATCH('Day') OPTION ranker=proximity;
+/* Thu Jan 15 22:23:15.982 2015 conn 3 real 0.000 wall 0.000 found 1 */ SELECT * FROM text_text WHERE MATCH('test') OPTION ranker=proximity;
+/* Thu Jan 15 22:23:21.108 2015 conn 4 real 0.000 wall 0.000 found 0 */ SELECT * FROM text_text WHERE MATCH('hello') OPTION ranker=proximity;
+/* Thu Jan 15 22:23:26.376 2015 conn 5 real 0.000 wall 0.000 found 6 */ SELECT * FROM text_text WHERE MATCH('and') OPTION ranker=proximity;
+/* Thu Jan 15 23:03:15.842 2015 conn 6 real 0.000 wall 0.000 found 1 */ SELECT * FROM text_text WHERE MATCH('Day') OPTION ranker=proximity;
+/* Thu Jan 15 23:03:19.810 2015 conn 7 real 0.000 wall 0.000 found 6 */ SELECT * FROM text_text WHERE MATCH('and') OPTION ranker=proximity;
+/* Thu Jan 15 23:03:26.753 2015 conn 8 real 0.000 wall 0.000 found 0 */ SELECT * FROM text_text WHERE MATCH('including') OPTION ranker=proximity;
+/* Thu Jan 15 23:03:30.418 2015 conn 9 real 0.000 wall 0.000 found 1 */ SELECT * FROM text_text WHERE MATCH('amazon') OPTION ranker=proximity;
+/* Thu Jan 15 23:03:35.274 2015 conn 10 real 0.000 wall 0.000 found 6 */ SELECT * FROM text_text WHERE MATCH('to') OPTION ranker=proximity;
+/* Thu Jan 15 23:03:39.754 2015 conn 11 real 0.000 wall 0.000 found 0 */ SELECT * FROM text_text WHERE MATCH('car') OPTION ranker=proximity;
+/* Thu Jan 15 23:03:43.207 2015 conn 12 real 0.000 wall 0.000 found 1 */ SELECT * FROM text_text WHERE MATCH('me') OPTION ranker=proximity;

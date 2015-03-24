@@ -65,3 +65,8 @@
 [Wed Jan 14 17:46:09.117 2015] [ 5598] caught SIGHUP (seamless=1, in queue=1)
 [Wed Jan 14 17:46:09.122 2015] [ 5598] rotating index 'text_text': success
 [Wed Jan 14 17:46:09.122 2015] [ 5598] rotating finished
+[Wed Jan 14 23:12:37.512 2015] [ 5598] caught SIGTERM, shutting down
+[Wed Jan 14 23:12:37.517 2015] [ 5598] shutdown complete
+[Thu Jan 15 22:21:13.362 2015] [ 2374] listening on all interfaces, port=9346
+[Thu Jan 15 22:21:13.379 2015] [ 2374] listening on all interfaces, port=9340
+[Thu Jan 15 22:21:13.428 2015] [ 2375] accepting connections
