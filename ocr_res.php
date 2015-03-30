@@ -8,8 +8,8 @@
   <style>
   td.ocr_res { max-width:300px; min-width:250px; margin:10px; min-height:100px; font-weight:bold;} 
   img.ocr_pic{ max-width:600px; max-height:200px;} 
-  body{background:#333;}
-  .container,table{background:#000;}
+  body{background:#fff;}
+  /*.container,table{background:#000;} */
   </style>
 </head>
 <body>
@@ -19,8 +19,10 @@
 <script type="text/javascript" src="src/jquery.waterfall.js"></script>
 <script type="text/javascript" src="index.js"></script>
 
-<center><h1>OCR's result demonstration</h1></center>
-<center><h3><a href="index.html">go back to OCR DATASET</a></h3></center>
+<center><h1>基于文字内容的图像检索</h1></center>
+<center><h3><a href="index.html">OCR DATASET</a></h3></center>
+<br/>
+<br/>
 
 
 <script>
@@ -33,9 +35,17 @@ function search(query){
       success:function(result){
         // window.ocr_table=ocr_table;
         $("#ocr_table").empty();
+        $("#search_cnt").text(result.length);
         console.log(result);
         for(i=0;i<result.length;i++){
-          var newRow="<tr><td>"+result[i]['name']+"</td><td><img class='ocr_pic' src='"+result[i]['name']+"'></td>"+"<td class='ocr_res'><pre>"+result[i]['text']+"</pre></td>";
+          var fpath = result[i]['name'];
+          console.log(fpath);
+          var _t=fpath.split("/");
+          var dir=_t[0];
+          var fname=_t[1];
+          var newRow="<tr><td>"+result[i]['name']+"</td><td><img class='ocr_pic' src='"+result[i]['name']+"'></td>"+
+            "<td><img style=\"max-width:230px;overflow:hidden;\" class=\"detect_pic\" src='"+dir+"/seg/"+fname+"'></td>"+ 
+            "<td class='ocr_res'><pre>"+result[i]['text']+"</pre></td>";
           $('#ocr_table').append(newRow);
         }
       }
@@ -43,8 +53,8 @@ function search(query){
 }
 </script>
 <center><p><label>搜索:</label>
-<input id="query" name="query"></input>
-<button onclick="search(query.value);">提交</button></p>
+<input id="query" name="query" style="height:30px;"></input>
+<button onclick="search(query.value);" style="height:30px;">提交</button></p>
 共找到<span id='search_cnt'>  </span>副图片
 </center>
 
@@ -62,7 +72,11 @@ for($i=0;$i<count($files);$i++){
 }
 ?>
 
-<table id="ocr_table" border="2" style="margin:auto;">
+<table  border="2" style="margin:auto;">
+<th>
+<tr style="font-size:22px;"><td>路径</td><td>原图</td><td>分割</td><td>识别</td></tr>
+</th>
+<tbody  id="ocr_table">
 <?php
 for($i=0;$i<count($files);$i++){
   $file=$files[$i];
@@ -78,6 +92,7 @@ for($i=0;$i<count($files);$i++){
 <td class="ocr_res"><pre><?php echo $file['ocr'];?></pre></td<>
 </tr>
 <?php } ?>
+</tbody>
 </table>
 
 </div>

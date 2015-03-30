@@ -4,3 +4,36 @@
 [Tue Mar 24 22:08:13.391 2015] [14023] listening on all interfaces, port=9346
 [Tue Mar 24 22:08:13.391 2015] [14023] listening on all interfaces, port=9340
 [Tue Mar 24 22:08:13.398 2015] [14024] accepting connections
+[Sun Mar 29 11:23:48.657 2015] [14024] caught SIGTERM, shutting down
+[Sun Mar 29 11:23:49.111 2015] [14024] shutdown complete
+[Sun Mar 29 15:21:35.665 2015] [ 3559] listening on all interfaces, port=9346
+[Sun Mar 29 15:21:35.675 2015] [ 3559] listening on all interfaces, port=9340
+[Sun Mar 29 15:21:35.699 2015] [ 3560] accepting connections
+[Sun Mar 29 15:23:39.780 2015] [ 3560] caught SIGTERM, shutting down
+[Sun Mar 29 15:23:39.833 2015] [ 3560] shutdown complete
+[Sun Mar 29 15:23:45.040 2015] [ 3698] listening on all interfaces, port=9346
+[Sun Mar 29 15:23:45.040 2015] [ 3698] listening on all interfaces, port=9340
+[Sun Mar 29 15:23:45.047 2015] [ 3699] accepting connections
+[Sun Mar 29 15:29:41.796 2015] [ 3699] caught SIGTERM, shutting down
+[Sun Mar 29 15:29:41.810 2015] [ 3699] shutdown complete
+[Sun Mar 29 15:29:47.728 2015] [ 3730] listening on all interfaces, port=9346
+[Sun Mar 29 15:29:47.728 2015] [ 3730] listening on all interfaces, port=9340
+[Sun Mar 29 15:29:47.735 2015] [ 3731] accepting connections
+[Sun Mar 29 15:54:24.481 2015] [ 3731] caught SIGHUP (seamless=1, in queue=1)
+[Sun Mar 29 15:54:24.487 2015] [ 3731] rotating index 'text_text': success
+[Sun Mar 29 15:54:24.487 2015] [ 3731] rotating finished
+[Sun Mar 29 15:55:00.358 2015] [ 3731] caught SIGTERM, shutting down
+[Sun Mar 29 15:55:00.386 2015] [ 3731] shutdown complete
+[Sun Mar 29 15:55:02.401 2015] [ 3838] listening on all interfaces, port=9346
+[Sun Mar 29 15:55:02.401 2015] [ 3838] listening on all interfaces, port=9340
+[Sun Mar 29 15:55:02.408 2015] [ 3839] accepting connections
+[Sun Mar 29 16:24:37.793 2015] [ 3839] caught SIGTERM, shutting down
+[Sun Mar 29 16:24:37.810 2015] [ 3839] shutdown complete
+[Sun Mar 29 16:28:07.430 2015] [ 3346] listening on all interfaces, port=9346
+[Sun Mar 29 16:28:07.440 2015] [ 3346] listening on all interfaces, port=9340
+[Sun Mar 29 16:28:07.473 2015] [ 3347] accepting connections
+[Sun Mar 29 23:49:43.039 2015] [ 3347] caught SIGTERM, shutting down
+[Sun Mar 29 23:49:43.072 2015] [ 3347] shutdown complete
+[Mon Mar 30 15:47:11.500 2015] [ 3941] listening on all interfaces, port=9346
+[Mon Mar 30 15:47:11.517 2015] [ 3941] listening on all interfaces, port=9340
+[Mon Mar 30 15:47:11.555 2015] [ 3942] accepting connections
